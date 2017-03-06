@@ -31,10 +31,8 @@ class BaseClass(object):
 
         self.log = log
         self.log.set_logger(level=self.config.get("log_level"), when="D", limit=1)
-        #Todo库名称
-        #self.mgdb = self.mgconn.test
-        self.mgdb = self.mgconn.msdk_stat
-
+        #Todo config collection
+        self.mgdb = self.mgconn.mymongdb
         self.hive = self.config.get("hive")
         self.hadoop = self.config.get("hadoop")
         self.logpath = self.config.get("log_path")
