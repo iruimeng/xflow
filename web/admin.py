@@ -1,11 +1,22 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-import os
-import yaml
-import handler
+from __future__ import absolute_import
 
+import os
+import sys
+import yaml
 import tornado.ioloop
 import tornado.web
+
+from . import history
+from . import task
+
+
+
+
+
+#CURRENT_PATH = os.path.dirname(__file__)
+
 
 settings = {
     'debug': True,
@@ -22,7 +33,9 @@ def router():
     router config
     """
     return tornado.web.Application([
-        (r"/", handler.Application)
+        (r"/", task.ListController),
+        (r"/add", task.AddController),
+        ('r"/history', history.ListController),
     ], **settings)
 
 
@@ -32,10 +45,11 @@ def loop():
     """
     The entry function
     """
-    conf = yaml.load(open('../config/config.ini'))
+    conf = yaml.load(open(os.path.join(os.path.dirname(__file__), '../config/config.ini')))
     router().listen(conf.get("listen"))
     tornado.ioloop.IOLoop.current().start()
 
+"""
 if __name__ == "__main__":
-    router().listen(8888)
-    tornado.ioloop.IOLoop.current().start()
+    loop()
+"""

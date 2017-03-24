@@ -1,0 +1,109 @@
+{% module Template('widget/header.html', show_comments=True) %}
+  <div id='wrapper'>
+    <!-- Sidebar -->
+    {% module Template('widget/sidebar.html') %}
+
+    <!-- Navigation -->
+    <section id='tools'>
+      <ul class='breadcrumb' id='breadcrumb'>
+        <li class='title'><a href="/tasks/index/">Tasks</a></li>
+        <li class="active">Add</li>
+      </ul>
+      <div id='toolbar'>
+      </div>
+    </section>
+    <!-- Content -->
+      <div id='content'>
+        <div class='panel panel-default grid'>
+          <div class='panel-heading'>
+            <i class='icon-table icon-large'></i>
+            Default Table
+            <div class='panel-tools'>
+              <div class='btn-group'>
+                <a class='btn' href='#'>
+                  <i class='icon-wrench'></i>
+                  Settings
+                </a>
+                <a class='btn' href='#'>
+                  <i class='icon-filter'></i>
+                  Filters
+                </a>
+                <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Reload'>
+                  <i class='icon-refresh'></i>
+                </a>
+              </div>
+              <div class='badge'>3 record</div>
+            </div>
+          </div>
+          <div class='panel-body filters'>
+            <div class='row'>
+              <div class='col-md-9'>
+                Add your custom filters here...
+              </div>
+              <div class='col-md-3'>
+                <div class='input-group'>
+                  <input class='form-control' placeholder='Quick search...' type='text'>
+                  <span class='input-group-btn'>
+                    <button class='btn' type='button'>
+                      <i class='icon-search'></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th class='actions'>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class='success'>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td class='action'>
+                  <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
+                    <i class='icon-zoom-in'></i>
+                  </a>
+                  <a class='btn btn-info' href='#'>
+                    <i class='icon-edit'></i>
+                  </a>
+                  <a class='btn btn-danger' href='#'>
+                    <i class='icon-trash'></i>
+                  </a>
+                </td>
+              </tr>
+              <tr class='danger'>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td class='action'>
+                  <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
+                    <i class='icon-zoom-in'></i>
+                  </a>
+                  <a class='btn btn-info' href='#'>
+                    <i class='icon-edit'></i>
+                  </a>
+                  <a class='btn btn-danger' href='#'>
+                    <i class='icon-trash'></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+  </div>
+
+{% module Template('widget/footer.html', show_comments=True) %}
+
